@@ -6,7 +6,7 @@
 
 outputfile=/tmp/ocrshot.png
 
-spectacle -r -b -o $outputfile
+spectacle -r -b -o $outputfile -n
 
 line="$(cat ${HOME}/.config/spectaclerc | grep --color=never lastSaveLocation=)"
 img="$(echo $line | tr ':' "\n" | tail -n 1)"
