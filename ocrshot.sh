@@ -3,17 +3,24 @@
 ##Requirements 
 # sudo pacman -S tesseract tesseract-data-eng tesseract-data-fra
 
+mkdir -p /tmp/ocrshot
+img_moved_file=/tmp/ocrshot/ocrshot_lastimage.png
+outputTextFile=/tmp/ocrshot/ocrshot_lastimage
 
-outputfile=/tmp/ocrshot.png
-
-spectacle -r -b -o $outputfile -n
+spectacle -r -b -n
 
 line="$(cat ${HOME}/.config/spectaclerc | grep --color=never lastSaveLocation=)"
-img="$(echo $line | tr ':' "\n" | tail -n 1)"
+imgfile="$(echo $line | tr ':' "\n" | tail -n 1)"
 
-tesseract $img ocrshot_file -l eng
-
-kate ocrshot_file.txt
+if [ -f $imgfile ];
+then
+echo "Analyzing '$imgfile'"
+    tesseract $imgfile $outputTextFile -l eng
+    mv $imgfile $img_moved_file
+    kate $outputTextFile.txt
+else
+    echo "Oups file not found"
+fi
 
 # pifs=$IFS
 # IFS=';'
