@@ -1,0 +1,41 @@
+LBl
+# sudo pacman -S tesseract tesseract-data-eng tesseract-data-fra
+
+LT IS
+img moved_file=/tmp/ocrshot/ocrshot_lastimage.png
+outputTextFile=/tmp/ocrshot/ocrshot_lastimage
+
+spectacle -r -b -n
+
+ 
+
+line="$(cat ${HOME}/.config/spectaclerc | grep --color=never lastSavelocation=)"
+imgfile="$(echo $line | tr ':' "\n" | tail -n 1)"
+
+if [ -f simgfile ; I
+
+juthl
+
+R VS U S A
+tesseract $imgfile $outputTextFile -1 eng
+my $imgfile $img moved file
+kate $outputTextFile.txt
+
+else
+PR S TR SR
+
+R
+i
+line=$(cat ${HOME}/.config/spectaclerc | grep --color=never lastSavelocation=)
+[
+
+f
+read -a strarr <<< "$line"
+1FS=pifs
+
+echo ${strarr[1]}
+
+ 
+
+ 
+

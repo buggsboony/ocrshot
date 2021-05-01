@@ -1,0 +1,21 @@
+4
+LB
+
+what=$ {PWD##*/}
+RSB
+#peut étre extension vide
+
+sudo pacman -S spectacle
+sudo pacman -S tesseract tesseract-data-eng tesseract-data-fra
+
+echo "Set executable..."
+
+chmod +x $whatSextension
+
+#echo "lien symbolique vers usr bin"
+
+sudo 1n -s "$PWD/$whatsextension” /usr/bin/$what
+echo "
+
+ 
+
