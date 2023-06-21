@@ -17,7 +17,7 @@ then
 echo "Analyzing '$imgfile'"
     tesseract $imgfile $outputTextFile -l eng
     mv $imgfile $img_moved_file
-    kate $outputTextFile.txt
+    kate --new $outputTextFile.txt
 else
     echo "Oups file not found"
 fi
