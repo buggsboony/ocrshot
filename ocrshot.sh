@@ -7,10 +7,19 @@ mkdir -p /tmp/ocrshot
 img_moved_file=/tmp/ocrshot/ocrshot_lastimage.png
 outputTextFile=/tmp/ocrshot/ocrshot_lastimage
 
-spectacle -r -b -n
+#spectacle -r -b -n #Ne fonctionne plus
+#imgfile="$HOME/ocrshot_image.png"
+imgfile="$HOME/pictures/screenshots/Screenshot_$(date +'%Y%m%d_%H%M%S').png" 
+spectacle  -br -o "$imgfile"
 
 line="$(cat ${HOME}/.config/spectaclerc | grep --color=never lastSaveLocation=)"
-imgfile="$(echo $line | tr ':' "\n" | tail -n 1)"
+#imgfile="$(echo $line | tr ':' "\n" | tail -n 1)"
+
+
+
+echo "fichier image : "
+echo $imgfile
+
 
 if [ -f $imgfile ];
 then
