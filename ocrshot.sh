@@ -21,10 +21,18 @@ echo "fichier image : "
 echo $imgfile
 
 
+if [ -z $OCRSHOT_LANG ];
+then
+    OCRSHOT_LANG="eng"
+    echo "OCRSHOT_LANG set to default, you may use: 'export OCRSHOT_LANG=fra' "
+fi;
+
+echo "OCRSHOT_LANG=$OCRSHOT_LANG"
+
 if [ -f $imgfile ];
 then
-echo "Analyzing '$imgfile'"
-    tesseract $imgfile $outputTextFile -l eng
+    echo "Analyzing '$imgfile'"
+    tesseract $imgfile $outputTextFile -l $OCRSHOT_LANG
     mv $imgfile $img_moved_file
     kate --new $outputTextFile.txt
 else
